@@ -5,7 +5,7 @@ import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { ArrowLeft, Calendar, User, Clock, Tag, Share2 } from "lucide-react";
-import { blogPosts } from "../../data/blog";
+import { BlogPosts } from "../../data/blog";
 import { toast } from "sonner";
 
 interface BlogPostProps {
@@ -283,7 +283,7 @@ export function BlogPost({ slug, onNavigate }: BlogPostProps) {
                   <CardContent className="p-6">
                     <h4 className="mb-4">Posts Recentes</h4>
                     <div className="space-y-4">
-                      {blogPosts
+                      {BlogPosts
                         .filter((p) => p.slug !== post.slug)
                         .slice(0, 3)
                         .map((recentPost) => (
@@ -340,7 +340,7 @@ export function BlogPost({ slug, onNavigate }: BlogPostProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="mb-12 text-center">Leia Também</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {blogPosts
+            {BlogPosts
               .filter((p) => p.category === post.category && p.slug !== post.slug)
               .slice(0, 3)
               .map((relatedPost, index) => (
