@@ -14,7 +14,8 @@ interface BlogProps {
 
 export function Blog({ onNavigate }: BlogProps) {
   const blogPosts = BlogPosts();
-
+  const blogPosts = BlogPosts();
+  const hasPosts = Array.isArray(blogPosts) && blogPosts.length > 0;
   return (
     <div>
       {/* Hero */}
@@ -35,54 +36,65 @@ export function Blog({ onNavigate }: BlogProps) {
       </section>
 
       {/* Featured Post */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card 
-              className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-              onClick={() => onNavigate("blog-post", { slug: blogPosts[0].slug })}
+      {hasPosts ? (
+        <section className="py-12 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative aspect-[16/10] lg:aspect-auto">
-                  <ImageWithFallback
-                    src={`https://source.unsplash.com/800x500/?${blogPosts[0].thumbnail}`}
-                    alt={blogPosts[0].title}
-                    className="w-full h-full object-cover"
-                  />
-                  <Badge className="absolute top-4 left-4 bg-primary">
-                    Destaque
-                  </Badge>
-                </div>
-                <CardContent className="p-8 flex flex-col justify-center">
-                  <Badge variant="secondary" className="w-fit mb-4">
-                    {blogPosts[0].category}
-                  </Badge>
-                  <h2 className="mb-4">{blogPosts[0].title}</h2>
-                  <p className="text-muted-foreground mb-6">{blogPosts[0].description}</p>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      <span>{new Date(blogPosts[0].date).toLocaleDateString("pt-BR")}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      <span>{blogPosts[0].readTime} de leitura</span>
-                    </div>
+              <Card 
+                className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                onClick={() => onNavigate("blog-post", { slug: blogPosts[0].slug })}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="relative aspect-[16/10] lg:aspect-auto">
+                    <ImageWithFallback
+                      src={`https://source.unsplash.com/800x500/?${blogPosts[0].thumbnail}`}
+                      alt={blogPosts[0].title}
+                      className="w-full h-full object-cover"
+                    />
+                    <Badge className="absolute top-4 left-4 bg-primary">
+                      Destaque
+                    </Badge>
                   </div>
-                  <Button className="w-fit bg-gradient-to-r from-[#10CFA3] to-[#04BFFD]">
-                    Ler Artigo <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </div>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
+                  <CardContent className="p-8 flex flex-col justify-center">
+                    <Badge variant="secondary" className="w-fit mb-4">
+                      {blogPosts[0].category}
+                    </Badge>
+                    <h2 className="mb-4">{blogPosts[0].title}</h2>
+                    <p className="text-muted-foreground mb-6">{blogPosts[0].description}</p>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        <span>{new Date(blogPosts[0].date).toLocaleDateString("pt-BR")}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        <span>{blogPosts[0].readTime} de leitura</span>
+                      </div>
+                    </div>
+                    <Button className="w-fit bg-gradient-to-r from-[#10CFA3] to-[#04BFFD]">
+                      Ler Artigo <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </div>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+      ) : (
+        <section className="py-12 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center py-12">
+              <h2 className="mb-4">Nenhum artigo disponível</h2>
+              <p className="text-muted-foreground">Ainda não há posts publicados.</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Blog Posts Grid */}
       <section className="py-12 bg-background">
