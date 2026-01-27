@@ -1,0 +1,25 @@
+{
+  "name": "SoftWave Solutions",
+  "slogan": "Transformando ideias em soluções digitais",
+  "description": "A SoftWave Solutions é uma empresa especializada em design gráfico, serviços de informática e soluções digitais. Desde 2015, ajudamos empresas a crescerem através de soluções criativas e tecnológicas.",
+  "email": "contato@softwavesl.com.br",
+  "phone": "(11) 9999-9999",
+  "whatsapp": "5511999999999",
+  "address": "São Paulo, SP - Brasil",
+  "cep": "01000-000",
+  "city": "São Paulo",
+  "state": "SP",
+  "social": {
+    "facebook": "https://facebook.com/softwavesolutions",
+    "instagram": "https://instagram.com/softwavesolutions",
+    "linkedin": "https://linkedin.com/company/softwavesolutions",
+    "twitter": "",
+    "youtube": ""
+  },
+  "businessHours": {
+    "weekdays": "Segunda a Sexta",
+    "hours": "09:00 - 18:00",
+    "saturday": "09:00 - 13:00",
+    "sunday": "Fechado"
+  }
+}

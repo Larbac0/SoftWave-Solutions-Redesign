@@ -1,0 +1,145 @@
+{
+  "Novo Item de Portfólio": {
+    "prefix": "portfolio-item",
+    "body": [
+      "{",
+      "  id: '${1:id}',",
+      "  slug: '${2:slug-do-projeto}',",
+      "  title: '${3:Título do Projeto}',",
+      "  category: '${4|grafico,informatica,digital|}',",
+      "  categoryLabel: '${5:Serviços Gráficos}',",
+      "  thumbnail: '${6:query unsplash}',",
+      "  description: '${7:Descrição completa do projeto...}',",
+      "  client: '${8:Nome do Cliente}',",
+      "  date: '${9:Janeiro 2025}',",
+      "  images: ['${10:imagem1}', '${11:imagem2}', '${12:imagem3}'],",
+      "  details: [",
+      "    { label: '${13:Formato}', value: '${14:9x5cm}' },",
+      "    { label: '${15:Material}', value: '${16:Papel couché}' },",
+      "  ],",
+      "  results: [",
+      "    '${17:Resultado 1}',",
+      "    '${18:Resultado 2}',",
+      "  ],",
+      "},"
+    ],
+    "description": "Template para adicionar novo projeto ao portfólio"
+  },
+  
+  "Novo Depoimento": {
+    "prefix": "testimonial",
+    "body": [
+      "{",
+      "  name: '${1:Nome do Cliente}',",
+      "  company: '${2:Nome da Empresa}',",
+      "  text: '${3:Depoimento completo do cliente...}',",
+      "  rating: ${4|5,4,3|},",
+      "},"
+    ],
+    "description": "Template para adicionar novo depoimento"
+  },
+  
+  "Novo Serviço": {
+    "prefix": "service-item",
+    "body": [
+      "{",
+      "  name: '${1:Nome do Serviço}',",
+      "  description: '${2:Descrição breve do serviço}',",
+      "  price: '${3:A partir de R$ 100}',",
+      "  features: [",
+      "    '${4:Feature 1}',",
+      "    '${5:Feature 2}',",
+      "    '${6:Feature 3}',",
+      "  ],",
+      "},"
+    ],
+    "description": "Template para adicionar novo serviço"
+  },
+  
+  "Nova Cor no Tema": {
+    "prefix": "theme-color",
+    "body": [
+      "${1:nomeDaCor}: \"${2:#000000}\",  // ${3:Descrição da cor}"
+    ],
+    "description": "Adicionar nova cor ao tema"
+  },
+  
+  "Novo Post do Blog": {
+    "prefix": "blog-post",
+    "body": [
+      "{",
+      "  slug: '${1:slug-do-post}',",
+      "  title: '${2:Título do Post}',",
+      "  description: '${3:Descrição curta...}',",
+      "  date: '${4:2025-01-27}',",
+      "  author: 'SoftWave Solutions',",
+      "  category: '${5|Gráfica,Tecnologia,Marketing Digital|}',",
+      "  thumbnail: '${6:query unsplash}',",
+      "  readTime: '${7:5} min',",
+      "  tags: ['${8:Tag1}', '${9:Tag2}'],",
+      "  content: \\`",
+      "# ${2:Título do Post}",
+      "",
+      "${10:Conteúdo do post em Markdown...}",
+      "  \\`,",
+      "},"
+    ],
+    "description": "Template para adicionar novo post ao blog"
+  },
+  
+  "Importar Config": {
+    "prefix": "import-config",
+    "body": [
+      "import { ${1:company} } from '${2:../../config}';"
+    ],
+    "description": "Importar de /config"
+  },
+  
+  "Importar Data": {
+    "prefix": "import-data",
+    "body": [
+      "import { ${1:homeContent} } from '${2:../../data}';"
+    ],
+    "description": "Importar de /data"
+  },
+  
+  "Importar Types": {
+    "prefix": "import-types",
+    "body": [
+      "import type { ${1:Page} } from '${2:../../types}';"
+    ],
+    "description": "Importar types"
+  },
+  
+  "Comentário de Seção": {
+    "prefix": "comment-section",
+    "body": [
+      "/**",
+      " * ${1:TÍTULO DA SEÇÃO}",
+      " * ",
+      " * ${2:Descrição do que esta seção faz}",
+      " */"
+    ],
+    "description": "Comentário de documentação para seção"
+  },
+  
+  "Estatística Home": {
+    "prefix": "home-stat",
+    "body": [
+      "{ value: '${1:100+}', label: '${2:Descrição}' },"
+    ],
+    "description": "Adicionar estatística na home"
+  },
+  
+  "Item Por Que Escolher": {
+    "prefix": "why-choose",
+    "body": [
+      "{",
+      "  icon: ${1:Zap},",
+      "  title: '${2:Título}',",
+      "  description: '${3:Descrição do diferencial}',",
+      "},"
+    ],
+    "description": "Item para seção Por Que Escolher"
+  }
+}

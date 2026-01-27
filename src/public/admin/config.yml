@@ -1,0 +1,315 @@
+# Configuração do Netlify CMS para SoftWave Solutions
+# Documentação completa: https://www.netlifycms.org/docs/
+
+# Backend (Git Gateway)
+backend:
+  name: git-gateway
+  branch: main # Altere para 'master' se seu repositório usa essa branch
+
+# Publicação
+publish_mode: editorial_workflow # Habilita workflow de aprovação (Draft → Review → Ready)
+
+# Configurações de mídia
+media_folder: "public/uploads" # Pasta onde as imagens serão salvas
+public_folder: "/uploads" # Caminho público das imagens
+
+# Logo personalizado (opcional)
+logo_url: https://softwavesl.com.br/logo.png
+
+# Desenvolvimento local (descomentar para usar localmente)
+# local_backend: true
+
+# Localização
+locale: pt
+
+# Coleções de conteúdo
+collections:
+  # ==========================================
+  # BLOG
+  # ==========================================
+  - name: "blog"
+    label: "📝 Blog"
+    label_singular: "Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{slug}}"
+    fields:
+      - { 
+          label: "Título", 
+          name: "title", 
+          widget: "string",
+          hint: "Título do post que aparecerá no site"
+        }
+      - { 
+          label: "Descrição Curta", 
+          name: "description", 
+          widget: "text",
+          hint: "Resumo do post (aparece nos cards e meta tags)"
+        }
+      - { 
+          label: "Data de Publicação", 
+          name: "date", 
+          widget: "datetime",
+          date_format: "DD/MM/YYYY",
+          time_format: "HH:mm",
+          format: "YYYY-MM-DDTHH:mm:ssZ"
+        }
+      - { 
+          label: "Autor", 
+          name: "author", 
+          widget: "string", 
+          default: "SoftWave Solutions"
+        }
+      - { 
+          label: "Categoria", 
+          name: "category", 
+          widget: "select", 
+          options: [
+            "Design Gráfico", 
+            "Informática", 
+            "Marketing Digital", 
+            "Tecnologia", 
+            "Dicas",
+            "Sustentabilidade",
+            "Tendências"
+          ]
+        }
+      - { 
+          label: "Tags", 
+          name: "tags", 
+          widget: "list",
+          hint: "Palavras-chave relacionadas ao post (pressione Enter para adicionar)",
+          allow_add: true
+        }
+      - { 
+          label: "Imagem de Destaque (Palavras-chave)", 
+          name: "thumbnail", 
+          widget: "string", 
+          hint: "Palavras-chave para busca de imagem (ex: design,computer,technology)",
+          pattern: ['^[a-zA-Z,]+$', "Use apenas letras e vírgulas, sem espaços"]
+        }
+      - { 
+          label: "Tempo de Leitura", 
+          name: "readTime", 
+          widget: "string", 
+          default: "5 min de leitura",
+          pattern: ['^[0-9]+ min de leitura$', "Use o formato: X min de leitura"]
+        }
+      - { 
+          label: "Conteúdo", 
+          name: "body", 
+          widget: "markdown",
+          hint: "Conteúdo completo do post em Markdown",
+          buttons: ["bold", "italic", "code", "link", "heading-two", "heading-three", "quote", "bulleted-list", "numbered-list"]
+        }
+      - { 
+          label: "Post em Destaque?", 
+          name: "featured", 
+          widget: "boolean", 
+          default: false,
+          hint: "Posts em destaque aparecem no topo da página"
+        }
+      - { 
+          label: "Status", 
+          name: "status", 
+          widget: "select", 
+          options: ["publicado", "rascunho"],
+          default: "publicado"
+        }
+
+  # ==========================================
+  # PORTFÓLIO
+  # ==========================================
+  - name: "portfolio"
+    label: "💼 Portfólio"
+    label_singular: "Projeto"
+    folder: "content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "portfolio/{{slug}}"
+    fields:
+      - { 
+          label: "Título do Projeto", 
+          name: "title", 
+          widget: "string",
+          hint: "Nome do projeto"
+        }
+      - { 
+          label: "Descrição", 
+          name: "description", 
+          widget: "text",
+          hint: "Descrição detalhada do projeto"
+        }
+      - { 
+          label: "Cliente", 
+          name: "client", 
+          widget: "string",
+          hint: "Nome do cliente ou empresa"
+        }
+      - { 
+          label: "Data", 
+          name: "date", 
+          widget: "string", 
+          hint: "Ex: Janeiro 2024, Dezembro 2023",
+          pattern: ['^[A-Za-zçÇáàãâéêíóôõúü]+ [0-9]{4}$', "Use o formato: Mês Ano (ex: Janeiro 2024)"]
+        }
+      - { 
+          label: "Categoria (ID)", 
+          name: "category", 
+          widget: "select", 
+          options: [
+            { label: "Design Gráfico", value: "graficos" },
+            { label: "Informática", value: "informatica" },
+            { label: "Serviços Digitais", value: "digitais" }
+          ],
+          hint: "Categoria técnica para filtros"
+        }
+      - { 
+          label: "Categoria (Exibição)", 
+          name: "categoryLabel", 
+          widget: "select", 
+          options: ["Design Gráfico", "Informática", "Serviços Digitais"],
+          hint: "Nome que aparece no site"
+        }
+      - { 
+          label: "Imagem Principal (Palavras-chave)", 
+          name: "thumbnail", 
+          widget: "string", 
+          hint: "Palavras-chave relacionadas ao projeto (ex: logo,brand,design)",
+          pattern: ['^[a-zA-Z,]+$', "Use apenas letras e vírgulas, sem espaços"]
+        }
+      - label: "Galeria de Imagens"
+        name: "images"
+        widget: "list"
+        hint: "Adicione palavras-chave para cada imagem da galeria"
+        field: 
+          label: "Palavra-chave da Imagem"
+          name: "keyword"
+          widget: "string"
+          hint: "Ex: website,mockup,design"
+        allow_add: true
+        min: 2
+        max: 6
+      - label: "Tecnologias Utilizadas"
+        name: "technologies"
+        widget: "list"
+        hint: "Ferramentas e tecnologias usadas no projeto"
+        field:
+          label: "Tecnologia"
+          name: "tech"
+          widget: "string"
+        allow_add: true
+        required: false
+      - label: "Detalhes do Projeto"
+        name: "details"
+        widget: "list"
+        hint: "Informações adicionais sobre o projeto"
+        fields:
+          - { label: "Label", name: "label", widget: "string", hint: "Ex: Serviço, Duração, Cliente" }
+          - { label: "Valor", name: "value", widget: "string", hint: "Ex: Identidade Visual, 3 meses, Empresa XYZ" }
+        allow_add: true
+      - label: "Resultados Alcançados"
+        name: "results"
+        widget: "list"
+        hint: "Liste os resultados e benefícios do projeto"
+        field:
+          label: "Resultado"
+          name: "result"
+          widget: "text"
+        allow_add: true
+        required: false
+      - { 
+          label: "Projeto em Destaque?", 
+          name: "featured", 
+          widget: "boolean", 
+          default: false,
+          hint: "Projetos em destaque aparecem primeiro"
+        }
+
+  # ==========================================
+  # CONFIGURAÇÕES DO SITE
+  # ==========================================
+  - name: "settings"
+    label: "⚙️ Configurações"
+    files:
+      # Informações da Empresa
+      - label: "📌 Informações da Empresa"
+        name: "company"
+        file: "content/settings/company.json"
+        fields:
+          - { label: "Nome da Empresa", name: "name", widget: "string", default: "SoftWave Solutions" }
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - { label: "Descrição", name: "description", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Telefone", name: "phone", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string", hint: "Número completo com código do país (ex: 5511999999999)" }
+          - { label: "Endereço Completo", name: "address", widget: "text" }
+          - { label: "CEP", name: "cep", widget: "string", required: false }
+          - { label: "Cidade", name: "city", widget: "string", required: false }
+          - { label: "Estado", name: "state", widget: "string", required: false }
+          - label: "Redes Sociais"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "Twitter/X", name: "twitter", widget: "string", required: false }
+              - { label: "YouTube", name: "youtube", widget: "string", required: false }
+          - label: "Horário de Funcionamento"
+            name: "businessHours"
+            widget: "object"
+            fields:
+              - { label: "Dias da Semana", name: "weekdays", widget: "string", default: "Segunda a Sexta" }
+              - { label: "Horário", name: "hours", widget: "string", default: "09:00 - 18:00" }
+              - { label: "Sábado", name: "saturday", widget: "string", required: false }
+              - { label: "Domingo", name: "sunday", widget: "string", required: false }
+
+      # SEO e Meta Tags
+      - label: "🔍 SEO e Meta Tags"
+        name: "seo"
+        file: "content/settings/seo.json"
+        fields:
+          - { label: "Título do Site", name: "siteTitle", widget: "string" }
+          - { label: "Descrição do Site", name: "siteDescription", widget: "text" }
+          - { label: "Palavras-chave", name: "keywords", widget: "list" }
+          - { label: "Imagem OG (URL)", name: "ogImage", widget: "string", required: false }
+          - { label: "Google Analytics ID", name: "googleAnalytics", widget: "string", required: false }
+          - { label: "Google Tag Manager ID", name: "googleTagManager", widget: "string", required: false }
+
+      # Serviços
+      - label: "🛠️ Serviços Oferecidos"
+        name: "services"
+        file: "content/settings/services.json"
+        fields:
+          - label: "Design Gráfico"
+            name: "graphics"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descrição", name: "description", widget: "text" }
+              - label: "Lista de Serviços"
+                name: "services"
+                widget: "list"
+                field: { label: "Serviço", name: "service", widget: "string" }
+          - label: "Informática"
+            name: "it"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descrição", name: "description", widget: "text" }
+              - label: "Lista de Serviços"
+                name: "services"
+                widget: "list"
+                field: { label: "Serviço", name: "service", widget: "string" }
+          - label: "Serviços Digitais"
+            name: "digital"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descrição", name: "description", widget: "text" }
+              - label: "Lista de Serviços"
+                name: "services"
+                widget: "list"
+                field: { label: "Serviço", name: "service", widget: "string" }

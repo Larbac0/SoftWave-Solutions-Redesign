@@ -1,0 +1,35 @@
+/**
+ * SoftWave Solutions - Tema e Tokens de Cores
+ * Paleta oficial da marca
+ */
+
+:root {
+  /* Cores da Marca */
+  --sw-primary: #10CFA3;
+  --sw-secondary: #04BFFD;
+  --sw-tertiary: #F8F9FA;
+  --sw-dark: #343A40;
+  
+  /* Variações de Primary */
+  --sw-primary-light: #3DDBBA;
+  --sw-primary-dark: #0DB389;
+  --sw-primary-hover: #0EB895;
+  
+  /* Variações de Secondary */
+  --sw-secondary-light: #36CFFD;
+  --sw-secondary-dark: #03A5DB;
+  --sw-secondary-hover: #03B3EC;
+  
+  /* Gradientes */
+  --sw-gradient-primary: linear-gradient(135deg, var(--sw-primary) 0%, var(--sw-secondary) 100%);
+  --sw-gradient-dark: linear-gradient(135deg, var(--sw-dark) 0%, #1a1f25 100%);
+  
+  /* Estados de hover e focus */
+  --sw-primary-rgb: 16, 207, 163;
+  --sw-secondary-rgb: 4, 191, 253;
+  
+  /* Sombras com cores da marca */
+  --sw-shadow-primary: 0 4px 14px 0 rgba(16, 207, 163, 0.25);
+  --sw-shadow-secondary: 0 4px 14px 0 rgba(4, 191, 253, 0.25);
+  --sw-shadow-soft: 0 2px 8px 0 rgba(52, 58, 64, 0.1);
+}
