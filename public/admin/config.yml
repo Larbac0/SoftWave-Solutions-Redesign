@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  branch: main # Altere para 'master' se necessário
+
+# Configurações de mídia
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Configurações locais (opcional, para desenvolvimento)
+local_backend: true
+
+# Coleções de conteúdo
+collections:
+  # Blog Posts
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Data de Publicação", name: "date", widget: "datetime" }
+      - { label: "Autor", name: "author", widget: "string", default: "SoftWave Solutions" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Design Gráfico", "Informática", "Marketing Digital", "Tecnologia", "Dicas"] }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Imagem de Destaque", name: "thumbnail", widget: "string", hint: "Palavras-chave para busca de imagem (ex: design,computer,technology)" }
+      - { label: "Tempo de Leitura", name: "readTime", widget: "string", default: "5 min de leitura" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+      - { label: "Destaque", name: "featured", widget: "boolean", default: false }
+
+  # Portfólio
+  - name: "portfolio"
+    label: "Portfólio"
+    folder: "content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Cliente", name: "client", widget: "string" }
+      - { label: "Data", name: "date", widget: "string", hint: "Ex: Janeiro 2024" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["graficos", "informatica", "digitais"] }
+      - { label: "Categoria (Label)", name: "categoryLabel", widget: "select", options: ["Design Gráfico", "Informática", "Serviços Digitais"] }
+      - { label: "Imagem Principal", name: "thumbnail", widget: "string", hint: "Palavras-chave para busca de imagem" }
+      - label: "Galeria de Imagens"
+        name: "images"
+        widget: "list"
+        field: { label: "Palavra-chave", name: "keyword", widget: "string" }
+      - label: "Tecnologias"
+        name: "technologies"
+        widget: "list"
+        field: { label: "Tecnologia", name: "tech", widget: "string" }
+      - label: "Detalhes do Projeto"
+        name: "details"
+        widget: "list"
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Valor", name: "value", widget: "string" }
+      - label: "Resultados"
+        name: "results"
+        widget: "list"
+        field: { label: "Resultado", name: "result", widget: "string" }
+      - { label: "Destaque", name: "featured", widget: "boolean", default: false }
+
+  # Configurações do Site
+  - name: "settings"
+    label: "Configurações"
+    files:
+      - label: "Informações da Empresa"
+        name: "company"
+        file: "content/settings/company.json"
+        fields:
+          - { label: "Nome da Empresa", name: "name", widget: "string" }
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - { label: "Descrição", name: "description", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Telefone", name: "phone", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "Endereço", name: "address", widget: "text" }
+          - label: "Redes Sociais"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "Twitter", name: "twitter", widget: "string", required: false }
