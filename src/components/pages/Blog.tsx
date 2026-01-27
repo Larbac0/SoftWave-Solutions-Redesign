@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { BlogPosts } from "../../data/blog";
+import { BlogPost } from "./BlogPost";
 
 interface BlogProps {
   onNavigate: (page: "blog-post", params?: { slug: string }) => void;
@@ -43,13 +44,13 @@ export function Blog({ onNavigate }: BlogProps) {
           >
             <Card 
               className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-              onClick={() => onNavigate("blog-post", { slug: blogPosts[0].slug })}
+              onClick={() => onNavigate("blog-post", { slug: BlogPosts[0].slug })}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative aspect-[16/10] lg:aspect-auto">
                   <ImageWithFallback
-                    src={`https://source.unsplash.com/800x500/?${blogPosts[0].thumbnail}`}
-                    alt={blogPosts[0].title}
+                    src={`https://source.unsplash.com/800x500/?${BlogPosts[0].thumbnail}`}
+                    alt={BlogPosts[0].title}
                     className="w-full h-full object-cover"
                   />
                   <Badge className="absolute top-4 left-4 bg-primary">
@@ -58,18 +59,18 @@ export function Blog({ onNavigate }: BlogProps) {
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
                   <Badge variant="secondary" className="w-fit mb-4">
-                    {blogPosts[0].category}
+                    {BlogPosts[0].category}
                   </Badge>
-                  <h2 className="mb-4">{blogPosts[0].title}</h2>
-                  <p className="text-muted-foreground mb-6">{blogPosts[0].description}</p>
+                  <h2 className="mb-4">{BlogPosts[0].title}</h2>
+                  <p className="text-muted-foreground mb-6">{BlogPosts[0].description}</p>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      <span>{new Date(blogPosts[0].date).toLocaleDateString("pt-BR")}</span>
+                      <span>{new Date(BlogPosts[0].date).toLocaleDateString("pt-BR")}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="h-4 w-4" />
-                      <span>{blogPosts[0].readTime} de leitura</span>
+                      <span>{BlogPosts[0].readTime} de leitura</span>
                     </div>
                   </div>
                   <Button className="w-fit bg-gradient-to-r from-[#10CFA3] to-[#04BFFD]">
