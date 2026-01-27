@@ -14,12 +14,11 @@ interface BlogProps {
 
 export function Blog({ onNavigate }: BlogProps) {
   const blogPosts = BlogPosts();
-  const blogPosts = BlogPosts();
   const hasPosts = Array.isArray(blogPosts) && blogPosts.length > 0;
   return (
     <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-[#10CFA3] via-[#04BFFD] to-[#10CFA3] text-white py-20">
+      <section className="relative bg-linear-to-br from-[#10CFA3] via-[#04BFFD] to-[#10CFA3] text-white py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -50,7 +49,7 @@ export function Blog({ onNavigate }: BlogProps) {
                 onClick={() => onNavigate("blog-post", { slug: blogPosts[0].slug })}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative aspect-[16/10] lg:aspect-auto">
+                  <div className="relative aspect-16/10 lg:aspect-auto">
                     <ImageWithFallback
                       src={`https://source.unsplash.com/800x500/?${blogPosts[0].thumbnail}`}
                       alt={blogPosts[0].title}
@@ -76,7 +75,7 @@ export function Blog({ onNavigate }: BlogProps) {
                         <span>{blogPosts[0].readTime} de leitura</span>
                       </div>
                     </div>
-                    <Button className="w-fit bg-gradient-to-r from-[#10CFA3] to-[#04BFFD]">
+                    <Button className="w-fit bg-linear-to-r from-[#10CFA3] to-[#04BFFD]">
                       Ler Artigo <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </CardContent>
@@ -102,7 +101,7 @@ export function Blog({ onNavigate }: BlogProps) {
           <SectionTitle title="Artigos Recentes" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.slice(1).map((post, index) => (
+            {blogPosts.slice(1).map((post: any, index: number) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -114,19 +113,19 @@ export function Blog({ onNavigate }: BlogProps) {
                   className="overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300 h-full flex flex-col"
                   onClick={() => onNavigate("blog-post", { slug: post.slug })}
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                  <div className="relative aspect-16/10 overflow-hidden bg-muted">
                     <ImageWithFallback
                       src={`https://source.unsplash.com/800x500/?${post.thumbnail}`}
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col flex-grow">
+                  <CardContent className="p-6 flex flex-col grow">
                     <Badge variant="secondary" className="w-fit mb-3">
                       {post.category}
                     </Badge>
                     <h3 className="mb-3 line-clamp-2">{post.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2 grow">
                       {post.description}
                     </p>
                     <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
@@ -170,7 +169,7 @@ export function Blog({ onNavigate }: BlogProps) {
                 placeholder="Seu e-mail"
                 className="flex-1 px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-[#0066CC]"
               />
-              <Button className="bg-gradient-to-r from-[#04BFFD] to-[#04BFFD]">
+              <Button className="bg-linear-to-r from-[#04BFFD] to-[#04BFFD]">
                 Inscrever-se
               </Button>
             </div>
