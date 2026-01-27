@@ -16,9 +16,6 @@ public_folder: "/uploads" # Caminho público das imagens
 # Logo personalizado (opcional)
 logo_url: https://softwavesl.com.br/logo.png
 
-# Desenvolvimento local (descomentar para usar localmente)
-# local_backend: true
-
 # Localização
 locale: pt
 
