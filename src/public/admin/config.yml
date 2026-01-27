@@ -44,6 +44,13 @@ collections:
           widget: "text",
           hint: "Resumo do post (aparece nos cards e meta tags)"
         }
+      - {
+        label: "Imagem de capa"
+        name: "cover"
+        widget: "image"
+        required: "true"
+        hint: "Imagem principal do post"
+      }
       - { 
           label: "Data de Publicação", 
           name: "date", 
