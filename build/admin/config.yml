@@ -6,9 +6,6 @@ backend:
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-# Configurações locais (opcional, para desenvolvimento)
-local_backend: true
-
 # Coleções de conteúdo
 collections:
   # Blog Posts
