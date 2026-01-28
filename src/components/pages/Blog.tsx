@@ -5,12 +5,12 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
-import { BlogPosts } from "../../data/blog";
+import { blogPosts } from "../../data/blog";
 
 interface BlogProps {
   onNavigate: (page: "blog-post", params?: { slug: string }) => void;
 }
-const blogPosts = BlogPosts();
+
 export function Blog({ onNavigate }: BlogProps) {
 
   return (
