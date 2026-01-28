@@ -1,7 +1,22 @@
 export function BlogPosts() {
   // In browser (client-side) we must not attempt to use Node-only APIs like fs/path.
-  // Return an empty list on the client to avoid bundler/runtime errors.
-  if (typeof window !== 'undefined') return [];
+  // Return a placeholder post on the client to preserve layout and avoid runtime errors
+  // when components access `blogPosts[0]`.
+  if (typeof window !== 'undefined') {
+    return [
+      {
+        slug: 'placeholder',
+        title: 'Nenhum artigo disponível',
+        description: 'Ainda não há posts publicados. Volte em breve para mais novidades.',
+        thumbnail: 'news',
+        category: 'Geral',
+        date: new Date().toISOString(),
+        readTime: '1 min',
+        content: '',
+        id: 'placeholder',
+      },
+    ];
+  }
 
   const fs = require('fs');
   const path = require('path');
