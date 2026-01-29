@@ -2,9 +2,17 @@
 # Documentação completa: https://www.netlifycms.org/docs/
 
 # Backend (Git Gateway)
+# backend:
+#   name: git-gateway
+#   branch: main # Altere para 'master' se seu repositório usa essa branch
+
 backend:
-  name: git-gateway
-  branch: main # Altere para 'master' se seu repositório usa essa branch
+  name: github
+  repo: Larbac0/SoftWave-Solutions-Redesign
+  branch: main
+
+site_url: https://softwave-solutions-redesign.pages.dev
+display_url: https://softwave-solutions-redesign.pages.dev
 
 # Publicação
 publish_mode: editorial_workflow # Habilita workflow de aprovação (Draft → Review → Ready)
