@@ -7,7 +7,7 @@ Este arquivo mostra exemplos reais de como fazer edições comuns no site.
 ## 📱 Exemplo 1: Atualizar Número do WhatsApp
 
 ### Cenário:
-A empresa mudou o número de WhatsApp de `(11) 99999-9999` para `(11) 98765-4321`.
+A empresa mudou o número de WhatsApp de `(21) 97001-6069` para `(21) 97001-6069`.
 
 ### Passo a Passo:
 
@@ -20,9 +20,9 @@ Arquivo: /config/company.ts
 ```typescript
 // ANTES:
 contact: {
-  phone: "(11) 99999-9999",
-  phoneRaw: "5511999999999",
-  whatsapp: "5511999999999",
+  phone: "(21) 97001-6069",
+  phoneRaw: "5521970016069",
+  whatsapp: "5521970016069",
   whatsappMessage: "Olá! Vim pelo site e gostaria de mais informações.",
 },
 ```
@@ -31,9 +31,9 @@ contact: {
 ```typescript
 // DEPOIS:
 contact: {
-  phone: "(11) 98765-4321",        // ← Mudou
-  phoneRaw: "5511987654321",       // ← Mudou (sem parênteses)
-  whatsapp: "5511987654321",       // ← Mudou
+  phone: "(21) 97001-6069",        // ← Mudou
+  phoneRaw: "5521970016069",       // ← Mudou (sem parênteses)
+  whatsapp: "5521970016069",       // ← Mudou
   whatsappMessage: "Olá! Vim pelo site e gostaria de mais informações.",
 },
 ```
@@ -395,9 +395,9 @@ Arquivo: /config/company.ts
 ```typescript
 // ANTES:
 contact: {
-  phone: "(11) 99999-9999",
-  phoneRaw: "5511999999999",
-  whatsapp: "5511999999999",
+  phone: "(21) 97001-6069",
+  phoneRaw: "5521970016069",
+  whatsapp: "5521970016069",
   whatsappMessage: "Olá! Vim pelo site e gostaria de mais informações.",
 },
 ```
@@ -406,9 +406,9 @@ contact: {
 ```typescript
 // DEPOIS:
 contact: {
-  phone: "(11) 99999-9999",
-  phoneRaw: "5511999999999",
-  whatsapp: "5511999999999",
+  phone: "(21) 97001-6069",
+  phoneRaw: "5521970016069",
+  whatsapp: "5521970016069",
   whatsappMessage: "Olá! Vi o site e gostaria de solicitar um orçamento. Pode me ajudar?",  // ← Nova mensagem
 },
 ```

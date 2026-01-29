@@ -78,4 +78,4 @@ Estamos ansiosos para ajudar sua empresa a crescer! Entre em contato conosco atr
 
 ---
 
-**SoftWave Solutions** - Transformando ideias em soluções digitais desde 2015.
+**SoftWave Solutions** - Transformando ideias em soluções digitais desde 2024.

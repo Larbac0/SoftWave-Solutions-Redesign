@@ -8,8 +8,9 @@ import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Checkbox } from "../ui/checkbox";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 import { FileCheck, Printer, Monitor, Globe } from "lucide-react";
+import { submitToGoogleSheets } from '../../lib/googleSheets';
 
 export function Quote() {
   const [formData, setFormData] = useState({
@@ -73,37 +74,58 @@ export function Quote() {
     },
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    if (!formData.acceptTerms) {
-      toast.error("É necessário aceitar os termos para continuar");
-      return;
+  if (!formData.acceptTerms) {
+    toast.error("É necessário aceitar os termos para continuar");
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    const result = await submitToGoogleSheets({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      serviceCategory: formData.serviceCategory,
+      serviceType: formData.serviceType,
+      description: formData.description,
+      urgency: formData.urgency,
+      budget: formData.budget,
+    });
+
+    if (result.success) {
+      toast.success("Orçamento solicitado com sucesso!", {
+        description: "Em breve entraremos em contato com uma proposta personalizada.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        serviceCategory: "",
+        serviceType: "",
+        description: "",
+        urgency: "",
+        budget: "",
+        acceptTerms: false,
+      });
+    } else {
+      throw new Error(result.error);
     }
-
-    setIsSubmitting(true);
-
-    // Simulação de envio
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    toast.success("Orçamento solicitado com sucesso!", {
-      description: "Em breve entraremos em contato com uma proposta personalizada.",
+  } catch (error) {
+    toast.error("Erro ao enviar orçamento", {
+      description: "Por favor, tente novamente.",
     });
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      serviceCategory: "",
-      serviceType: "",
-      description: "",
-      urgency: "",
-      budget: "",
-      acceptTerms: false,
-    });
+    console.error('Erro:', error);
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

@@ -301,8 +301,8 @@ npm run type-check
 
 - 🌐 Website: [softwavesl.com.br](https://softwavesl.com.br)
 - 📧 Email: contato@softwavesl.com.br
-- 📱 WhatsApp: (11) 9999-9999
-- 📍 Localização: São Paulo, SP - Brasil
+- 📱 WhatsApp: (21) 97001-6069
+- 📍 Localização: Rio de Janeiro, RJ - Brasil
 
 ### Redes Sociais
 
@@ -347,7 +347,7 @@ Este projeto é propriedade da SoftWave Solutions e não pode ser reproduzido se
   
   **Desenvolvido com ❤️ pela SoftWave Solutions**
   
-  *Transformando ideias em soluções digitais desde 2015*
+  *Transformando ideias em soluções digitais desde 2024*
   
   ---
   

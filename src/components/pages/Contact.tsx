@@ -8,6 +8,7 @@ import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { submitToGoogleSheets } from '../../lib/googleSheets';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -19,26 +20,43 @@ export function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulação de envio
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    toast.success("Mensagem enviada com sucesso!", {
-      description: "Entraremos em contato em breve.",
+  try {
+    const result = await submitToGoogleSheets({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
     });
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
+    if (result.success) {
+      toast.success("Mensagem enviada com sucesso!", {
+        description: "Entraremos em contato em breve.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      throw new Error(result.error);
+    }
+  } catch (error) {
+    toast.error("Erro ao enviar mensagem", {
+      description: "Por favor, tente novamente ou entre em contato pelo WhatsApp.",
     });
+    console.error('Erro:', error);
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -186,7 +204,7 @@ export function Contact() {
                           type="tel"
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="(11) 99999-9999"
+                          placeholder="(21) 97001-6069"
                         />
                       </div>
                       <div className="space-y-2">
