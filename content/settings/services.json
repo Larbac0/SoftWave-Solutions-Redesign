@@ -1,0 +1,50 @@
+{
+  "graphics": {
+    "title": "Design Gráfico",
+    "description": "Criamos identidades visuais únicas e materiais gráficos que fazem sua marca se destacar.",
+    "services": [
+      "Identidade Visual",
+      "Logotipos",
+      "Papelaria Corporativa",
+      "Materiais Impressos",
+      "Embalagens",
+      "Banners e Outdoors",
+      "Cartões de Visita",
+      "Folders e Catálogos",
+      "Adesivos e Etiquetas",
+      "Manual de Marca"
+    ]
+  },
+  "it": {
+    "title": "Informática",
+    "description": "Soluções completas em tecnologia para manter seu negócio sempre funcionando.",
+    "services": [
+      "Manutenção de Computadores",
+      "Suporte Técnico",
+      "Infraestrutura de TI",
+      "Instalação de Redes",
+      "Backup e Segurança",
+      "Montagem de Computadores",
+      "Upgrade de Hardware",
+      "Consultoria em TI",
+      "Help Desk",
+      "Gestão de Servidores"
+    ]
+  },
+  "digital": {
+    "title": "Serviços Digitais",
+    "description": "Amplie sua presença online com estratégias digitais eficientes e personalizadas.",
+    "services": [
+      "Marketing Digital",
+      "Gestão de Redes Sociais",
+      "Criação de Sites",
+      "E-commerce",
+      "SEO e SEM",
+      "Email Marketing",
+      "Google Ads",
+      "Facebook Ads",
+      "Produção de Conteúdo",
+      "Análise de Métricas"
+    ]
+  }
+}

@@ -1,19 +1,10 @@
-# Configuração do Netlify CMS para SoftWave Solutions
-# Documentação completa: https://www.netlifycms.org/docs/
+# Configuração do Decap CMS para SoftWave Solutions
+# Documentação completa: https://decapcms.org/docs/
 
 # Backend (Git Gateway)
-# backend:
-#   name: git-gateway
-#   branch: main # Altere para 'master' se seu repositório usa essa branch
-
 backend:
-  name: github
-  repo: Larbac0/SoftWave-Solutions-Redesign
-  branch: main
-  auth_endpoint: https://auth.decapcms.org/auth
-
-site_url: https://softwave-solutions-redesign.pages.dev
-display_url: https://softwave-solutions-redesign.pages.dev
+  name: git-gateway
+  branch: main # Altere para 'master' se seu repositório usa essa branch
 
 # Publicação
 publish_mode: editorial_workflow # Habilita workflow de aprovação (Draft → Review → Ready)
@@ -24,6 +15,9 @@ public_folder: "/uploads" # Caminho público das imagens
 
 # Logo personalizado (opcional)
 logo_url: https://softwavesl.com.br/logo.png
+
+# Desenvolvimento local (descomentar para usar localmente)
+# local_backend: true
 
 # Localização
 locale: pt
