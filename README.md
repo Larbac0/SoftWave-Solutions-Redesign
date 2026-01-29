@@ -1,7 +1,7 @@
 # SoftWave Solutions - Website Oficial
 
 <div align="center">
-  <img src="public/logo.png" alt="SoftWave Solutions" width="200"/>
+  <img src="src/assets/Logo SoftWave.png" width="200"/>
   
   **Transformando ideias em soluções digitais**
   
