@@ -186,9 +186,9 @@ export const colors = {
 2. Edite `contact`:
 ```typescript
 contact: {
-  phone: "(21) 97001-6069",
-  phoneRaw: "5521970016069",
-  whatsapp: "5521970016069",
+  phone: "(11) 99999-9999",
+  phoneRaw: "5511999999999",
+  whatsapp: "5511999999999",
   // ...
 }
 ```

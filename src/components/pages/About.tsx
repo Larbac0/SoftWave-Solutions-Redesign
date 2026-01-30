@@ -103,16 +103,15 @@ export function About() {
                   A SoftWave Solutions nasceu da visão de
                   oferecer soluções integradas que combinam o
                   melhor dos mundos gráfico, tecnológico e
-                  digital. Fundada em 2024, começamos focados em
-                  serviços de suporte técnico e manutenção de
-                  computadores, garantindo alta qualidade.
+                  digital. Fundada em 2018, começamos focados em
+                  serviços gráficos de alta qualidade.
                 </p>
                 <p>
                   Com o passar dos anos, percebemos que nossos
                   clientes precisavam de mais do que apenas
-                  suporte técnico. Eles buscavam parceiros que
+                  impressões. Eles buscavam parceiros que
                   pudessem ajudá-los em todas as frentes: desde
-                  a impressão de cartões de visita até a
+                  a manutenção de seus equipamentos até a
                   criação de sua presença digital.
                 </p>
                 <p>

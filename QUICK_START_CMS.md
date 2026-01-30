@@ -199,8 +199,7 @@ backend:
 ## 📞 Precisa de Ajuda?
 
 - 📧 Email: contato@softwavesl.com.br
-- 📱 WhatsApp: (21) 97001-6069
-- 🌐 Site: softwavesl.com.br
+- 📱 WhatsApp: (11) 9999-9999
 - 📖 Docs: Leia o [NETLIFY_CMS_SETUP.md](/NETLIFY_CMS_SETUP.md) completo
 
 ---

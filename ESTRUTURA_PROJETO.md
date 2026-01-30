@@ -205,8 +205,8 @@ EXEMPLO: Mudando o telefone
 
 1. Editar:
    /config/company.ts
-   ├── contact.phone = "(21) 97001-6069"
-   └── contact.whatsapp = "5521970016069"
+   ├── contact.phone = "(11) 98765-4321"
+   └── contact.whatsapp = "5511987654321"
 
 2. Automático:
    ✅ /components/layout/Footer.tsx (atualiza)

@@ -49,8 +49,8 @@ export const company = {
   seo: {
     domain: "softwavesl.com.br",
     title: "SoftWave Solutions - Gráfica, Informática e Serviços Digitais",
-    description: "Serviços completos de gráfica rápida, manutenção de computadores e desenvolvimento web no Rio de Janeiro. Qualidade e agilidade para sua empresa.",
-    keywords: "gráfica rápida, impressão, manutenção computador, sites, design gráfico, rio de janeiro",
+    description: "Serviços completos de gráfica rápida, manutenção de computadores e desenvolvimento web em São Paulo. Qualidade e agilidade para sua empresa.",
+    keywords: "gráfica rápida, impressão, manutenção computador, sites, design gráfico, são paulo",
   },
   
   // Estatísticas (atualize conforme crescimento)
