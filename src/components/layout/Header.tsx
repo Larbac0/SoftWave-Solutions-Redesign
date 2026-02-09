@@ -19,7 +19,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
     { id: "about" as Page, label: "Sobre" },
     { id: "services" as Page, label: "Serviços" },
     { id: "portfolio" as Page, label: "Portfólio" },
-    { id: "blog" as Page, label: "Blog" },
+//    { id: "blog" as Page, label: "Blog" },
     { id: "contact" as Page, label: "Contato" },
   ];
 

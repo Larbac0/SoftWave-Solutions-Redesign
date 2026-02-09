@@ -8,6 +8,7 @@ import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { enviarParaSheets } from "../../services/googleSheets";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -19,26 +20,28 @@ export function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulação de envio
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    toast.success("Mensagem enviada com sucesso!", {
-      description: "Entraremos em contato em breve.",
+  try {
+    await enviarParaSheets("contato", {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message
     });
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    alert("Mensagem enviada com sucesso!");
+    setFormData(initialState);
+  } catch {
+    alert("Erro ao enviar mensagem.");
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
