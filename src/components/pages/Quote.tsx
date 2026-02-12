@@ -28,20 +28,6 @@ export function Quote() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const serviceCategories = {
-    graphic: {
-      label: "Serviços Gráficos",
-      icon: Printer,
-      services: [
-        "Cartões de Visita",
-        "Panfletos e Flyers",
-        "Etiquetas e Adesivos",
-        "Plotagem",
-        "Impressão de Apostilas",
-        "Encadernação",
-        "Mini-Banners e Quadros",
-        "Outro",
-      ],
-    },
     it: {
       label: "Serviços de Informática",
       icon: Monitor,

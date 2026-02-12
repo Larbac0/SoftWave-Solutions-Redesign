@@ -62,8 +62,8 @@ const handleSubmit = async (e: React.FormEvent) => {
     {
       icon: Mail,
       title: "E-mail",
-      content: "contato@softwavesl.com.br",
-      action: "mailto:contato@softwavesl.com.br",
+      content: "contato@softwavesolutions.com.br",
+      action: "mailto:contato@softwavesolutions.com.br",
     },
     {
       icon: MapPin,

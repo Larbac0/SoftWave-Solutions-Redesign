@@ -1,4 +1,4 @@
-const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbyIyPlbJjA6mRjfVgPdG-m9i5PJYPtUBs_hdNAcBODxK0YAsgqpILUtTHkQjyt7veXR/exec";
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbz_8mVYzLFy7Qb3l7bkR6aXyG9Kq78B2skgor6CemfBoJ9tOSncdOksek6Yd43kCEae/exec";
 
 export type TipoFormulario = "contato" | "orcamento";
 
@@ -10,6 +10,7 @@ export async function enviarParaSheets(
     method: "POST",
     body: JSON.stringify({
       tipo,
+      statusEnvio: "não enviado",
       ...payload,
       userAgent: navigator.userAgent
     })

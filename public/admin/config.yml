@@ -23,7 +23,7 @@ media_folder: "public/uploads" # Pasta onde as imagens serão salvas
 public_folder: "/uploads" # Caminho público das imagens
 
 # Logo personalizado (opcional)
-logo_url: https://softwavesl.com.br/logo.png
+logo_url: https://softwavesolutions.com.br/logo.png
 
 # Localização
 locale: pt

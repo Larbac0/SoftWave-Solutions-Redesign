@@ -46,50 +46,6 @@ interface ServicesProps {
 }
 
 export function Services({ onNavigate, initialSection }: ServicesProps) {
-  const graphicServices = [
-    {
-      icon: FileText,
-      title: "Cartões de Visita",
-      description: "Cartões profissionais em diversos materiais e acabamentos.",
-      features: ["Design personalizado", "Papel couché ou vergê", "Verniz ou laminação", "Entrega rápida"],
-    },
-    {
-      icon: FileText,
-      title: "Panfletos e Flyers",
-      description: "Material promocional impresso com qualidade e cores vibrantes.",
-      features: ["Diversos tamanhos", "4x0 ou 4x4 cores", "Papel couché 90g ou 115g", "Tiragem sob medida"],
-    },
-    {
-      icon: Tag,
-      title: "Etiquetas e Adesivos",
-      description: "Etiquetas personalizadas para diversos fins comerciais.",
-      features: ["Diversos formatos", "Adesivo resistente", "Acabamento opcional", "Quantidade flexível"],
-    },
-    {
-      icon: ImageIcon,
-      title: "Plotagem",
-      description: "Impressão em grandes formatos para banners, lonas e fachadas.",
-      features: ["Alta resolução", "Lona ou vinil", "Corte especial", "Instalação disponível"],
-    },
-    {
-      icon: BookOpen,
-      title: "Impressão de Apostilas",
-      description: "Apostilas e materiais educacionais com ótimo custo-benefício.",
-      features: ["PB ou colorido", "Diversos formatos", "Papel sulfite 75g", "Volume sob medida"],
-    },
-    {
-      icon: BookMarked,
-      title: "Encadernação",
-      description: "Acabamento profissional para seus documentos e trabalhos.",
-      features: ["Espiral ou térmica", "Capa dura ou flexível", "Diversos tamanhos", "Entrega imediata"],
-    },
-    {
-      icon: Frame,
-      title: "Mini-Banners e Quadros",
-      description: "Impressões decorativas e promocionais para ambientes.",
-      features: ["Diversos tamanhos", "Com ou sem moldura", "Papel fotográfico", "Qualidade superior"],
-    },
-  ];
 
   const itServices = [
     {
@@ -217,30 +173,17 @@ export function Services({ onNavigate, initialSection }: ServicesProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs 
             defaultValue={
-              initialSection === "graficos" ? "graphic" : 
               initialSection === "informatica" ? "it" : 
               initialSection === "digitais" ? "digital" : 
               "graphic"
             } 
             className="w-full"
           >
-            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 mb-12">
-              <TabsTrigger value="graphic">Gráficos</TabsTrigger>
+            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-12">
+              {/*<TabsTrigger value="graphic">Gráficos</TabsTrigger>*/}
               <TabsTrigger value="it">Informática</TabsTrigger>
               <TabsTrigger value="digital">Digitais</TabsTrigger>
             </TabsList>
-
-            <TabsContent value="graphic" className="mt-0" id="graficos">
-              <SectionTitle
-                title="Serviços Gráficos"
-                subtitle="Impressão profissional e acabamento de alta qualidade"
-              />
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {graphicServices.map((service, index) => (
-                  <ServiceCard key={index} {...service} delay={index * 0.05} />
-                ))}
-              </div>
-            </TabsContent>
 
             <TabsContent value="it" className="mt-0" id="informatica">
               <SectionTitle

@@ -97,7 +97,6 @@ export function Footer({ onNavigate }: FooterProps) {
           <div>
             <h3 className="mb-4">Nossos Serviços</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Serviços Gráficos</li>
               <li>Serviços de Informática</li>
               <li>Serviços Digitais</li>
               <li>Consultoria em TI</li>

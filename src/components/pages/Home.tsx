@@ -42,9 +42,6 @@ export function Home({ onNavigate }: HomeProps) {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mb-6"
             >
-              <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm mb-6">
-                {homeContent.hero.badge}
-              </span>
             </motion.div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl mb-6">
               {homeContent.hero.title}
@@ -89,7 +86,7 @@ export function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section 
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -115,7 +112,8 @@ export function Home({ onNavigate }: HomeProps) {
             ))}
           </div>
         </div>
-      </section>
+      </section> 
+        */}
 
       {/* Services Section */}
       <section className="py-20 bg-muted/30">
@@ -124,7 +122,7 @@ export function Home({ onNavigate }: HomeProps) {
             title={homeContent.services.title}
             subtitle={homeContent.services.subtitle}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {mainServices.map((service, index) => (
               <ServiceCard
                 key={index}

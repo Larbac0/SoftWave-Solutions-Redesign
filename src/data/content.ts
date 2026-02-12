@@ -52,21 +52,21 @@ export const whyChooseUs: WhyChooseItem[] = [
  */
 export const testimonials: Testimonial[] = [
   {
-    name: "Maria Silva",
-    company: "Boutique Elegance",
-    text: "Excelente atendimento! Meus cartões ficaram perfeitos e o site aumentou minhas vendas.",
+    name: "Damião José",
+    company: "Claris Casa & Clube",
+    text: "Site incrível! A equipe da SoftWave entendeu exatamente o que precisávamos e entregou um site moderno e funcional que realmente ajudou a aumentar nossos leads",
     rating: 5,
   },
   {
-    name: "João Santos",
-    company: "Tech Solutions",
+    name: "Rogério Silva",
+    company: "Cliente",
     text: "Resolveram todos os problemas do meu computador de forma rápida e profissional.",
     rating: 5,
   },
   {
-    name: "Ana Costa",
-    company: "Doces da Ana",
-    text: "O cartão digital com QR Code foi um sucesso! Muito mais prático para compartilhar.",
+    name: "João Santos",
+    company: "Rei do corte Barbershop",
+    text: "Excelente atendimento! O site aumentou a marcação de horários e melhorou a visibilidade do meu negócio.",
     rating: 5,
   },
 ];
@@ -156,7 +156,7 @@ export const aboutContent = {
   story: {
     title: "Nossa História",
     paragraphs: [
-      "A SoftWave Solutions nasceu da união de três paixões: design gráfico, tecnologia e inovação digital. Fundada há mais de 5 anos, começamos como uma pequena gráfica rápida atendendo a comunidade local.",
+      "A SoftWave Solutions nasceu da união de três paixões por tecnologia e inovação digital. Fundada há mais de 2 anos, começamos como uma pequena gráfica rápida atendendo a comunidade local.",
       "Com o tempo, percebemos que nossos clientes precisavam de mais do que apenas impressão. Eles buscavam um parceiro completo que pudesse cuidar de toda a comunicação visual de seus negócios, desde o cartão de visita até a presença digital.",
       "Hoje, somos uma empresa completa que oferece serviços integrados de gráfica, manutenção de informática e soluções digitais. Atendemos desde pequenos empreendedores até empresas estabelecidas, sempre com o mesmo compromisso: qualidade, agilidade e resultados.",
     ],

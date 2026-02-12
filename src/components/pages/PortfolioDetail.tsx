@@ -81,7 +81,9 @@ export function PortfolioDetail({ slug, onNavigate }: PortfolioDetailProps) {
               >
                 <div className="aspect-video rounded-lg overflow-hidden bg-muted">
                   <ImageWithFallback
-                    src={`https://source.unsplash.com/1200x675/?${project.thumbnail}`}
+                    src={project.thumbnail.startsWith('http') || project.thumbnail.startsWith('/') 
+                      ? project.thumbnail 
+                      : `https://source.unsplash.com/1200x675/?${project.thumbnail}`}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />
@@ -93,7 +95,9 @@ export function PortfolioDetail({ slug, onNavigate }: PortfolioDetailProps) {
                       className="aspect-video rounded-lg overflow-hidden bg-muted"
                     >
                       <ImageWithFallback
-                        src={`https://source.unsplash.com/600x400/?${image}`}
+                        src={image.startsWith('http') || image.startsWith('/') 
+                          ? image 
+                          : `https://source.unsplash.com/600x400/?${image}`}
                         alt={`${project.title} - Imagem ${index + 1}`}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />

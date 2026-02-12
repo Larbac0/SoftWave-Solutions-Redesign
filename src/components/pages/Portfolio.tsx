@@ -20,7 +20,6 @@ export function Portfolio({ onNavigate }: PortfolioProps) {
 
   const categories = [
     { id: "all", label: "Todos" },
-    { id: "grafico", label: "Gráficos" },
     { id: "informatica", label: "Informática" },
     { id: "digital", label: "Digitais" },
   ];
@@ -81,7 +80,9 @@ export function Portfolio({ onNavigate }: PortfolioProps) {
                 >
                   <div className="relative aspect-[3/2] overflow-hidden bg-muted">
                     <ImageWithFallback
-                      src={`https://source.unsplash.com/600x400/?${project.thumbnail}`}
+                      src={project.thumbnail.startsWith('http') || project.thumbnail.startsWith('/') 
+                        ? project.thumbnail 
+                        : `https://source.unsplash.com/600x400/?${project.thumbnail}`}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
@@ -115,31 +116,6 @@ export function Portfolio({ onNavigate }: PortfolioProps) {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {[
-              { value: "500+", label: "Projetos Gráficos" },
-              { value: "300+", label: "Computadores Atendidos" },
-              { value: "200+", label: "Sites Criados" },
-              { value: "98%", label: "Clientes Satisfeitos" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl mb-2" style={{ color: "#04BFFD" }}>{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-[#10CFA3] via-[#04BFFD] to-[#10CFA3] text-white">

@@ -15,7 +15,7 @@ export const company = {
   contact: {
     phone: "(21) 97001-6069",
     phoneRaw: "5521970016069",
-    email: "contato@softwavesl.com.br",
+    email: "contato@softwavesolutions.com.br",
     whatsapp: "5521970016069",
     whatsappMessage: "Olá! Vim pelo site e gostaria de mais informações.",
   },

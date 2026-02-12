@@ -21,18 +21,6 @@ export interface ServiceItem {
  */
 export const mainServices: ServiceItem[] = [
   {
-    icon: Printer,
-    title: "Serviços Gráficos",
-    description: "Impressão profissional, design e acabamento de alta qualidade para suas necessidades.",
-    features: [
-      "Cartões de visita e panfletos",
-      "Plotagem e adesivos",
-      "Impressão de apostilas",
-      "Encadernação profissional",
-    ],
-    section: "graficos",
-  },
-  {
     icon: Monitor,
     title: "Serviços de Informática",
     description: "Manutenção, upgrade e suporte técnico completo para seus equipamentos.",
@@ -62,34 +50,6 @@ export const mainServices: ServiceItem[] = [
  * DETALHAMENTO DOS SERVIÇOS
  * Para a página de serviços com informações completas
  */
-
-// Serviços Gráficos Detalhados
-export const graphicServices = [
-  {
-    name: "Cartões de Visita",
-    description: "Cartões profissionais em diversos papéis e acabamentos",
-    price: "A partir de R$ 80/milheiro",
-    features: ["Couché 300g", "Diversos acabamentos", "Entrega em 3 dias"],
-  },
-  {
-    name: "Panfletos e Folders",
-    description: "Material promocional de alta qualidade",
-    price: "A partir de R$ 150/milheiro",
-    features: ["Diversos formatos", "Papel couché", "Design incluso"],
-  },
-  {
-    name: "Banners e Lonas",
-    description: "Impressão digital de grande formato",
-    price: "Consulte",
-    features: ["Lona 440g", "Instalação disponível", "Qualquer tamanho"],
-  },
-  {
-    name: "Encadernação",
-    description: "Acabamento profissional para seus documentos",
-    price: "A partir de R$ 15/unidade",
-    features: ["Espiral ou térmica", "Capas personalizadas", "Diversos formatos"],
-  },
-];
 
 // Serviços de Informática Detalhados
 export const computerServices = [

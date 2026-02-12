@@ -41,28 +41,37 @@ export function About() {
 
   const timeline = [
     {
-      year: "2018",
+      year: "2024",
       title: "Fundação",
       description:
-        "Início das atividades focadas em serviços gráficos",
+        "Três amigos com conhecimento em tecnologia decidem transformar habilidade em negócio.",
     },
     {
-      year: "2020",
-      title: "Expansão",
+      year: "2025",
+      title: "Estrutura e Profissionalização",
       description:
-        "Inclusão de serviços de informática e suporte técnico",
+        "Aperfeiçoamento técnico em desenvolvimento, automação e suporte",
     },
     {
-      year: "2022",
-      title: "Digitalização",
+      year: "2026",
+      title: "Expansão e Foco em Clientes",
       description:
-        "Lançamento dos serviços digitais e presença online",
+        "Nova fase: foco em clientes e crescimento.",
+    },
+  ];
+
+  const team = [
+    {
+      name: "Nauã Jorge",
+      role: "Cargo / Função",
     },
     {
-      year: "2024",
-      title: "Consolidação",
-      description:
-        "Referência em soluções integradas de tecnologia",
+      name: "Igor Cabral",
+      role: "Cargo / Função",
+    },
+    {
+      name: "Guilherme Cunha",
+      role: "Cargo / Função",
     },
   ];
 
@@ -100,27 +109,16 @@ export function About() {
               <h2 className="mb-4">Nossa História</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  A SoftWave Solutions nasceu da visão de
-                  oferecer soluções integradas que combinam o
-                  melhor dos mundos gráfico, tecnológico e
-                  digital. Fundada em 2018, começamos focados em
-                  serviços gráficos de alta qualidade.
+                  A SoftWave Solutions nasceu em 2024 da iniciativa de três amigos movidos pela paixão por tecnologia e pelo desejo de transformar conhecimento em soluções reais. O que começou com a criação de sites simples evoluiu rapidamente para algo maior: uma empresa com propósito, identidade e visão de futuro.
                 </p>
                 <p>
-                  Com o passar dos anos, percebemos que nossos
-                  clientes precisavam de mais do que apenas
-                  impressões. Eles buscavam parceiros que
-                  pudessem ajudá-los em todas as frentes: desde
-                  a manutenção de seus equipamentos até a
-                  criação de sua presença digital.
+                  Desde o início, nosso foco sempre foi gerar valor por meio da tecnologia — desenvolvendo soluções digitais, prestando suporte técnico e ajudando pessoas e empresas a utilizarem a tecnologia de forma estratégica, eficiente e segura.
                 </p>
                 <p>
-                  Hoje, somos uma empresa completa que oferece
-                  desde cartões de visita até sites
-                  profissionais, passando por manutenção de
-                  computadores e consultoria em TI. Nosso
-                  compromisso é ser o parceiro único que nossos
-                  clientes precisam para crescer.
+                  Em 2026, entramos em uma nova fase: estamos expandindo nossa atuação e buscando clientes para oferecer serviços completos de informática — desde desenvolvimento de sites e soluções digitais até suporte técnico, infraestrutura e consultoria tecnológica.
+                </p>
+                <p>
+                  A SoftWave Solutions não é apenas uma empresa de tecnologia. É o resultado de amizade, visão, inovação e compromisso com a excelência.
                 </p>
               </div>
             </motion.div>
@@ -293,8 +291,8 @@ export function About() {
             title="Nossa Equipe"
             subtitle="Profissionais dedicados e qualificados"
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((_, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {team.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -311,10 +309,10 @@ export function About() {
                       <Users className="h-12 w-12 text-white" />
                     </div>
                     <h4 className="mb-1">
-                      Nome do Colaborador
+                      {member.name}
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                      Cargo / Função
+                      {member.role}
                     </p>
                   </CardContent>
                 </Card>
