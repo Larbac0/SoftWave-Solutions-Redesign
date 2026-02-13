@@ -27,6 +27,7 @@ import {
   Share2,
   Cloud,
   FileCheck,
+  Network,
 } from "lucide-react";
 
 type Page =
@@ -96,14 +97,20 @@ export function Services({ onNavigate, initialSection }: ServicesProps) {
       description: "Instalação e ativação de pacotes de software profissional.",
       features: ["Microsoft Office", "Adobe Creative", "Configuração inicial", "Treinamento básico"],
     },
+    {
+      icon: Wrench,
+      title: "Implantação e manutenção de servidores",
+      description: "Configuração e manutenção de servidores para ambientes corporativos.",
+      features: ["Configuração de servidor", "Manutenção preventiva", "Suporte técnico", "Backup e segurança"],
+    }
   ];
 
   const digitalServices = [
     {
       icon: Globe,
-      title: "Mini-Sites",
+      title: "Sites",
       description: "Sites institucionais modernos e responsivos.",
-      features: ["Design responsivo", "SEO básico", "Formulário de contato", "Domínio e hospedagem"],
+      features: ["Design responsivo", "SEO otimizado", "Formulário de contato", "Domínio e hospedagem"],
     },
     {
       icon: Smartphone,
@@ -119,13 +126,13 @@ export function Services({ onNavigate, initialSection }: ServicesProps) {
     },
     {
       icon: Sparkles,
-      title: "Logotipo Simples",
-      description: "Criação de identidade visual básica para sua marca.",
+      title: "Logotipo",
+      description: "Criação de identidade visual para sua marca.",
       features: ["3 opções de design", "Arquivos vetoriais", "Versões colorida e PB", "Revisões incluídas"],
     },
     {
       icon: Share2,
-      title: "Social Media Básico",
+      title: "Social Media",
       description: "Criação de posts e artes para redes sociais.",
       features: ["Posts personalizados", "Stories", "Identidade visual", "Formatos otimizados"],
     },
@@ -143,10 +150,22 @@ export function Services({ onNavigate, initialSection }: ServicesProps) {
     },
     {
       icon: Palette,
-      title: "Artes Básicas",
-      description: "Criação de artes simples para diversos fins.",
+      title: "Artes Gráficas",
+      description: "Criação de artes para diversos fins.",
       features: ["Posts", "Stories", "Banners web", "Miniaturas"],
     },
+    {
+      icon: Shield,
+      title: "Segurança Digital",
+      description: "Proteção e segurança de seus dados e equipamentos.",
+      features: ["Antivirus", "Firewall", "Backup de segurança", "Atualizações regulares"],
+    },
+    {
+      icon: Network,
+      title: "Monitoramento de Redes",
+      description: "Análise e monitoramento de redes para garantir performance.",
+      features: ["Análise de tráfego", "Detecção de intrusos", "Relatórios detalhados", "Suporte técnico"],
+    }
   ];
 
   return (

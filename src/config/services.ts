@@ -37,10 +37,10 @@ export const mainServices: ServiceItem[] = [
     title: "Serviços Digitais",
     description: "Presença digital moderna com sites, landing pages e identidade visual.",
     features: [
-      "Mini-sites e landing pages",
+      "Sites corporativos e landing pages",
       "Cartão digital com QR Code",
       "Logotipos profissionais",
-      "Social media básico",
+      "Social media e artes gráficas",
     ],
     section: "digitais",
   },
@@ -82,7 +82,7 @@ export const computerServices = [
 // Serviços Digitais Detalhados
 export const digitalServices = [
   {
-    name: "Mini Site / Landing Page",
+    name: "Sites / Landing Pages",
     description: "Site de uma página otimizado para conversão",
     price: "A partir de R$ 599",
     features: ["Design responsivo", "Hospedagem 1 ano", "Domínio incluso"],
